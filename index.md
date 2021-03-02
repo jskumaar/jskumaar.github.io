@@ -1,8 +1,8 @@
 ---
 layout: frontpage
-title: Karl Broman
-description: Karl Broman is Professor in Biostatistics and Medical Informatics at University of Wisconsin - Madison; research in statistical genetics
-keywords: Broman, QTL, R/qtl, quantitative trait loci, statistics, statistical genetics, recombination
+title: Suresh Kumaar Jayaraman
+description: Suresh is a Ph.D. candidate in ME at the University of Michigan, Ann Arbor developing interactive models of human behavior and interactive controllers for autonomous vehicle applications.
+keywords: human-robot interaction, pedestrian behavior modelling, trust in autonomy, intention-aware automated vehicle control, physiological sensing, human-robot communication
 ---
 
 <div class="navbar">
