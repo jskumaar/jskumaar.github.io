@@ -8,7 +8,7 @@ keywords: human-robot interaction, pedestrian behavior modelling, trust in auton
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="https://github.com/jskumaar/jskumaar.github.io/cv/CV_SURESH_KUMAAR_JAYARAMAN.pdf">cv</a></li>
+          <li><a href="https://github.com/jskumaar/blob/main/jskumaar.github.io/cv/CV_SURESH_KUMAAR_JAYARAMAN.pdf">cv</a></li>
 		  <li><a href="https://scholar.google.com/citations?user=8H5KVN8AAAAJ&hl=en">scholar</a></li>
           <li><a href="https://github.com/jskumaar">github</a></li>
           <li><a href="https://linkedin.com/in/sureshkumaarjayaraman">linkedin</a></li>
