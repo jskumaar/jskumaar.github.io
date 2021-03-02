@@ -1,6 +1,4 @@
-## Karl Broman&rsquo;s website
-
-See [kbroman.org](https://kbroman.org).
+## Suresh Kumaar's website
 
 ---
 
