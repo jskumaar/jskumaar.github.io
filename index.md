@@ -8,10 +8,12 @@ keywords: human-robot interaction, pedestrian behavior modelling, trust in auton
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="{{ BASE_PATH }}/broman_cv.pdf">cv</a></li>
-          <li><a href="https://github.com/kbroman">github</a></li>
-          <li><a href="https://kbroman.org/blog">blog</a></li>
-          <li><a href="https://twitter.com/kwbroman">@kwbroman</a></li>
+          <li><a href="https://github.com/jskumaar/cv/CV_SURESH KUMAAR JAYARAMAN.pdf">cv</a></li>
+		  <li><a href="https://scholar.google.com/citations?user=8H5KVN8AAAAJ&hl=en">scholar</a></li>
+          <li><a href="https://github.com/jskumaar">github</a></li>
+          <li><a href="https://linkedin.com/in/sureshkumaarjayaraman">linkedin</a></li>
+          <li><a href="jskumaar@umich.edu">email</a></li>
+		  <li><a href="https://orcid.org/0000-0002-4874-8582">ORCiD</a></li>
       </ul>
   </div>
 </div>
