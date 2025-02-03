@@ -15,7 +15,7 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: human behavior modeling, explainable AI decision-making, group human-robot interaction, human-robot communication, human-robot trust and teaming, interaction-aware robot control # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: assets/img/hri_website_icon.jpg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: hri_website_icon.jpg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://jskumaar.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
