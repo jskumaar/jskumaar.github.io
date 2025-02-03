@@ -1,25 +1,58 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <a href="https://www.ri.cmu.edu/"> <small> Robotics Institute </small> </a> <b><font size="+2">.</font></b> <a href="https://www.cmu.edu/"> <small>Carnegie Mellon University</small></a> <b> <font size="+2">.</font></b> <small> Postdoctoral researcher at </small> <a href="https://tbd.ri.cmu.edu/"><small>TBD, </small></a> <a href="https://harp.ri.cmu.edu/"><small>HARP, </small></a> <small> and RASL </small>
+
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  more_info:
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+<p align="justify">
+My research aims to develop autonomous systems that can seamlessly integrate into complex, human-centric environments.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Motivated by the critical need for mutual understanding between humans and autonomous systems, my work focuses on two key thrusts:
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+- Modeling human behavior to enable robots to interpret human intentions, actions, and mental states, ensuring safe and effective interactions in dynamic, real-world environments.
+- Designing explainable decision-making frameworks that make autonomous systems' behavior intuitive and transparent to human users, fostering trust and collaboration in both dyadic and group settings.
+</p>
+
+<p align="justify"?
+In my current postdoc at CMU, I examine how robots should communicate their decision-making process (abstracted as reward function weights) with a group of people, particularly in a human-robot team setting to improve learning, trust, and team performance. 
+</p>
+
+<a href = "https://drive.google.com/file/d/1sQMH6OjKaKRdcFnhgq2kZAcPnsz7RFNZ/view?usp=sharing"> My CV can be found here. </a>
+
+
+<p align="justify">
+<h4>Current position</h4>  
+Postdoctoral associate in Robotics Institute at Carnegie Mellon University.
+</p>
+
+<p align="justify">
+<h4>Prior education</h4>
+<ul>
+  <li> Ph.D. in Mechanical Engineering at <a href="https://umich.edu/">UM</a>, Ann Arbor, in 2021. </li>
+  <li> M.S. in Mechanical Engineering at <a href="https://umich.edu/">UM</a>, Ann Arbor, in 2018. </li>
+  <li> B.E. in Production Engineering at <a href="https://www.annauniv.edu/"> Anna University </a>, India in 2013. </li>
+</ul>
+</p>
+
+<p align="justify">
+<h4>Research Interests</h4>  
+human behavior modeling, explainable decision-making, group human-AI/robot interactions, trust in AI/robots, interaction-aware control, human-AI/robot communication,
+human-AI/robot teaming, socially intelligent agents
+</p>
+
+<p align="justify">
+<h4>Clubs and Recreation</h4> 
+Apart from research, I am currently part of the CMU RI Climate Committee and I have been part of <a href="https://grin.rackham.umich.edu/"> Graduate Rackham International </a> as the co-chair of the Mentorship team (2019 - 2021) to help international graduate students find appropriate support and mentorship. When not working, I enjoy cooking, hiking, playing board games, and watching movies/series. <br />
+</p>
