@@ -470,7 +470,21 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+          window.open("mailto:%73%75%72%65%73%68%6B%6A@%63%6D%75.%65%64%75", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/jskumaar", "_blank");
+        },
+      },{
+        id: 'social-gitlab',
+        title: 'GitLab',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://gitlab.com/jskumaar", "_blank");
         },
       },{
         id: 'social-inspire',
@@ -478,6 +492,27 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/jskumaar", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0000-0002-4874-8582", "_blank");
+        },
+      },{
+        id: 'social-publons',
+        title: 'Publons',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://publons.com/a/AAT-7761-2021/", "_blank");
         },
       },{
         id: 'social-rss',
@@ -491,14 +526,14 @@ ninja.data = [{
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+          window.open("https://scholar.google.com/citations?user=8H5KVN8AAAAJ&hl", "_blank");
         },
       },{
-        id: 'social-custom_social',
-        title: 'Custom_social',
+        id: 'social-semanticscholar',
+        title: 'Semantic Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.alberteinstein.com/", "_blank");
+          window.open("https://www.semanticscholar.org/author/40052328", "_blank");
         },
       },{
       id: 'light-theme',
