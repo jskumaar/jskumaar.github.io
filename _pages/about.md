@@ -48,6 +48,5 @@ Postdoctoral associate in Robotics Institute at Carnegie Mellon University.
 
 <p align="justify">
 <h4>Research Interests</h4>  
-human behavior modeling, explainable decision-making, group human-AI/robot interactions, trust in AI/robots, interaction-aware control, human-AI/robot communication,
-human-AI/robot teaming, socially intelligent agents
+human behavior modeling, explainable decision-making, group human-AI/robot interactions, trust in AI/robots, interaction-aware control, human-AI/robot communication, human-AI/robot teaming, socially intelligent agents
 </p>
