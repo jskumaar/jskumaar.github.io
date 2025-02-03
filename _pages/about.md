@@ -29,7 +29,7 @@ Motivated by the critical need for mutual understanding between humans and auton
 In my current postdoc at CMU, I examine how robots should communicate their decision-making process (abstracted as reward function weights) with a group of people, particularly in a human-robot team setting to improve learning, trust, and team performance. 
 </p>
 
-<a href = "https://drive.google.com/file/d/1sQMH6OjKaKRdcFnhgq2kZAcPnsz7RFNZ/view?usp=sharing"> My CV can be found here. </a>
+<a href = "https://drive.google.com/file/d/13zaqV8z_u8R5joqBgZi0oc4hCeg1o2jy/view?usp=sharing"> My CV can be found here. </a>
 
 
 <p align="justify">
