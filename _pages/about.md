@@ -16,10 +16,11 @@ social: true # includes social icons at the bottom of the page
 ---
 
 My research aims to develop autonomous systems that can seamlessly integrate into complex, human-centric environments. Motivated by the critical need for mutual understanding between humans and autonomous systems, my work focuses on two key thrusts:
+
 - Modeling human behavior to enable robots to interpret human intentions, actions, and mental states, ensuring safe and effective interactions in dynamic, real-world environments.
 - Designing explainable decision-making frameworks that make autonomous systems' behavior intuitive and transparent to human users, fostering trust and collaboration in both dyadic and group settings.
 
-In my current postdoc at CMU, I examine how robots should communicate their decision-making process (abstracted as reward function weights) with a group of people, particularly in a human-robot team setting to improve learning, trust, and team performance. 
+In my current postdoc at CMU, I examine how robots should communicate their decision-making process (abstracted as reward function weights) with a group of people, particularly in a human-robot team setting to improve learning, trust, and team performance.
 
 <h4>Education</h4>
 <ul>
