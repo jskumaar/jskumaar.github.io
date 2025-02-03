@@ -124,9 +124,8 @@ disqus_shortname: # put your disqus shortname
 external_sources:
   - name:
     rss_url:
-  - name: 
+  - name:
     posts:
-
 
 # -----------------------------------------------------------------------------
 # Newsletter
