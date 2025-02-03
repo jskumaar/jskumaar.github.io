@@ -51,8 +51,3 @@ Postdoctoral associate in Robotics Institute at Carnegie Mellon University.
 human behavior modeling, explainable decision-making, group human-AI/robot interactions, trust in AI/robots, interaction-aware control, human-AI/robot communication,
 human-AI/robot teaming, socially intelligent agents
 </p>
-
-<p align="justify">
-<h4>Clubs and Recreation</h4> 
-Apart from research, I am currently part of the CMU RI Climate Committee and I have been part of <a href="https://grin.rackham.umich.edu/"> Graduate Rackham International </a> as the co-chair of the Mentorship team (2019 - 2021) to help international graduate students find appropriate support and mentorship. When not working, I enjoy cooking, hiking, playing board games, and watching movies/series. <br />
-</p>
