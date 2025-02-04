@@ -1,81 +1,37 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: Pedestrian Modeling
+description: Developing hybrid-automaton models of long-term urban pedestrian behavior
+img: /assets/img/ped_typical_behavior.png
 importance: 1
 category: work
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+For automated vehicles (AVs) to navigate safely, they must be able to anticipate and predict the behavior of pedestrians. This is particularly critical in urban driving environments where risks of collisions are high. However, a major challenge is that pedestrian behavior is inherently multimodal in nature, i.e., pedestrians can plausibly take multiple paths. This is because, in large part, pedestrian behaviors are driven by unique intentions and decisions made by each pedestrian walking along a particular sidewalk or
+crosswalk. As described in this paper, we developed a hybrid automaton model of multimodal pedestrian behavior called Multimodal Hybrid Pedestrian (MHP). We account for multimodal pedestrian behavior by identifying pedestrian decision-making points and developing decision-making models to predict pedestrian behaviors in a probabilistic hybrid automaton framework. 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="/assets/img/ped_typical_behavior.png" title="Typical pedestrian behavior" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="/assets/img/ped_MHP_model.png" title="Multimodal Hybrid Pedestrian (MHP) model" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    On the left, is a typical pedestrian crossing scenario at an unsignalized crosswalk. Right, shows the hybrid automaton model of a pedestrian.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
+The resulting automaton model is more likely to predict the ground truth trajectory compared to two baseline models - a baseline hybrid automaton model and a
+constant velocity model. The MHP model is applicable to a wide variety of urban scenarios - midblocks, intersections, one-way, and two-way streets, etc., and the probabilistic predictions from the model can be utilized for AV motion planning.
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="/assets/img/MHP_FRS.png" title="example image" class="Illustration of multimodal pedestrian behavior" %}
+    </div>
 </div>
-```
-
-{% endraw %}
+<div class="caption">
+    <p align="justify">
+      e <sup>1</sup><sub>p</sub>,  e <sup>2</sup><sub>p</sub>, and  e <sup>3</sup><sub>p</sub> are prediction envelopes at prediction time step  t <sub>p</sub>.  e <sup>1</sup><sub>p</sub> is the prediction envelope of the constant velocity model and  e <sup>2</sup><sub>p</sub> and  e <sup>3</sup><sub>p</sub> are the prediction envelopes corresponding to two possible future behaviors—waiting by the crosswalk and crossing—identified by the MHP model. FRSP is the forward reachable set at t <sub>p</sub> assuming the pedestrian could have walked in any direction with a maximum speed of 2.5 m/s. The green line indicates observed ground truth trajectory up to time  and the solid orange line indicates the ground truth trajectory after t <sub>p</sub> . The constant velocity predicts envelope  e <sup>1</sup><sub>p</sub> based on the initial heading of the pedestrian. However, the pedestrian turns to cross at the crosswalk, which is captured by the prediction envelope  e <sup>3</sup><sub>p</sub> of the MHP model.
+    </p>
+</div>

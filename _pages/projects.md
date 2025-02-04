@@ -1,12 +1,12 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Some of my exciting projects. More recent work will be updated soon! <a href = "https://drive.google.com/file/d/173xGfJtU2xfSRhCRGi2H_StgEmuhBWQy/view?usp=sharing"> My research statement can be found here. </a>
 nav: true
 nav_order: 3
-display_categories: [work, fun]
-horizontal: false
+display_categories:
+horizontal: true
 ---
 
 <!-- pages/projects.md -->
