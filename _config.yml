@@ -201,6 +201,7 @@ exclude:
   - vendor
   - _pages/blog.md
   - _posts/
+  - assets/jupyter/blog.ipynb
 keep_files:
   - CNAME
   - .nojekyll
