@@ -1,8 +1,10 @@
 ---
 layout: post
-date: 2016-01-15 07:59:00-0400
+date: 2024-03
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement with Markdown emoji! :sparkles: :smile:
+Presented at the HRI 2024 Workshop on *Explainability in Human-Robot Collaboration*, sharing work on modeling human learning from robot demonstrations.
+
+

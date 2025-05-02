@@ -13,7 +13,7 @@ email: sureshkj@cmu.edu # your email address
 github_username: jskumaar # your GitHub user name
 gitlab_username: jskumaar # your GitLab user name
 # ieee_id: # your ieeexplore.ieee.org/author/id
-inspirehep_id: 1010907 # Inspire HEP author ID
+# inspirehep_id: 1010907 # Inspire HEP author ID
 # instagram_id: # your instagram id
 # kaggle_id: # your kaggle id
 # keybase_username: # your keybase user name
@@ -29,10 +29,10 @@ orcid_id: 0000-0002-4874-8582 # your ORCID ID
 publons_id: AAT-7761-2021 # your ID on Publons
 # quora_username: # your Quora username
 # research_gate_profile: # your profile on ResearchGate
-rss_icon: true # set to true to show the RSS icon
+# rss_icon: true # set to true to show the RSS icon
 scholar_userid: 8H5KVN8AAAAJ&hl # your Google Scholar ID
 # scopus_id: # your profile on Scopus
-semanticscholar_id: 40052328 # your Semantic Scholar ID
+# semanticscholar_id: 40052328 # your Semantic Scholar ID
 # spotify_id: # your spotify id
 # stackoverflow_id: # your stackoverflow id
 # telegram_username: # your Telegram user name

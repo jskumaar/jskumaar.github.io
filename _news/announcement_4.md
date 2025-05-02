@@ -1,0 +1,10 @@
+---
+layout: post
+date: 2024-10
+inline: true
+related_posts: false
+---
+
+Presented at IROS 2024 the work on explainable robot decion making in groups, titled, *Understanding Robot Minds: Leveraging Machine Teaching for Transparent Human-Robot Collaboration Across Diverse Groups*.
+
+

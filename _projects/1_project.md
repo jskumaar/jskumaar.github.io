@@ -1,37 +1,42 @@
 ---
 layout: page
-title: Pedestrian Modeling
-description: Developing hybrid-automaton models of long-term urban pedestrian behavior
-img: /assets/img/ped_typical_behavior.png
+title: Explainable AI Decision-Making in Human-AI Groups
+description: A closed-loop machine teaching framework that uses explainable robot demonstrations and particle filters to model and adapt to individual and group beliefs, improving human understanding of robot decision-making in teams.
+img: /assets/img/group_teaching_thumbnail.png
 importance: 1
 category: work
 related_publications: true
 ---
 
-For automated vehicles (AVs) to navigate safely, they must be able to anticipate and predict the behavior of pedestrians. This is particularly critical in urban driving environments where risks of collisions are high. However, a major challenge is that pedestrian behavior is inherently multimodal in nature, i.e., pedestrians can plausibly take multiple paths. This is because, in large part, pedestrian behaviors are driven by unique intentions and decisions made by each pedestrian walking along a particular sidewalk or
-crosswalk. As described in this paper, we developed a hybrid automaton model of multimodal pedestrian behavior called Multimodal Hybrid Pedestrian (MHP). We account for multimodal pedestrian behavior by identifying pedestrian decision-making points and developing decision-making models to predict pedestrian behaviors in a probabilistic hybrid automaton framework. 
+This research topic focuses on enhancing the transparency and efficacy of human-robot collaboration among human groups through explainable robot demonstrations. The goal is to help human collaborators understand how the robots make decisions generally for a task.
+
+The framework uses machine teaching to explain the robot's policy to human learners. Using counterfactual reasoning and scaffolding, the robot provides several demonstrations to teach various concepts and trade-offs in its internal reward function to the human learners. The approach involves using particle filters (PF) for modeling individual and aggregated team beliefs about the robot’s decision-making (i.e., its reward). 
+
+
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/ped_typical_behavior.png" title="Typical pedestrian behavior" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/ped_MHP_model.png" title="Multimodal Hybrid Pedestrian (MHP) model" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    On the left, is a typical pedestrian crossing scenario at an unsignalized crosswalk. Right, shows the hybrid automaton model of a pedestrian.
-</div>
-
-The resulting automaton model is more likely to predict the ground truth trajectory compared to two baseline models - a baseline hybrid automaton model and a
-constant velocity model. The MHP model is applicable to a wide variety of urban scenarios - midblocks, intersections, one-way, and two-way streets, etc., and the probabilistic predictions from the model can be utilized for AV motion planning.
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/MHP_FRS.png" title="example image" class="Illustration of multimodal pedestrian behavior" %}
+        {% include figure.liquid loading="eager" path="/assets/img/group_teaching_overview.png" title="Belief modeling in group teaching" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
     <p align="justify">
-      e <sup>1</sup><sub>p</sub>,  e <sup>2</sup><sub>p</sub>, and  e <sup>3</sup><sub>p</sub> are prediction envelopes at prediction time step  t <sub>p</sub>.  e <sup>1</sup><sub>p</sub> is the prediction envelope of the constant velocity model and  e <sup>2</sup><sub>p</sub> and  e <sup>3</sup><sub>p</sub> are the prediction envelopes corresponding to two possible future behaviors—waiting by the crosswalk and crossing—identified by the MHP model. FRSP is the forward reachable set at t <sub>p</sub> assuming the pedestrian could have walked in any direction with a maximum speed of 2.5 m/s. The green line indicates observed ground truth trajectory up to time  and the solid orange line indicates the ground truth trajectory after t <sub>p</sub> . The constant velocity predicts envelope  e <sup>1</sup><sub>p</sub> based on the initial heading of the pedestrian. However, the pedestrian turns to cross at the crosswalk, which is captured by the prediction envelope  e <sup>3</sup><sub>p</sub> of the MHP model.
+        This illustration highlights the complexity of teaching human groups by modeling different belief states. Top-left shows three individuals with different beliefs about the robot’s decision-making. These beliefs are used to generate targeted or aggregated representations shown at the bottom: individual beliefs (distinct understanding per person), team common belief (intersection of all), and team joint belief (union of all). The robot uses these representations to adapt its explanations for improved understanding across the team.
     </p>
 </div>
+
+
+A closed-loop teaching framework leverages insights from education literature to adaptively generate demonstrations based on individual and aggregated team beliefs. Human learners are provided with several lessons, with each lesson having demonstrations (examples) of robot behavior, check-in tests to evaluate their understanding of the underlying concept, and feedback on their performance in these tests.
+
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="/assets/img/group_teaching_comparison_belief_space.png" title="Belief updates across different teaching strategies." class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    This figure shows how particle filter-based belief distributions evolve for three individuals (P1, P2, P3) and their aggregated team beliefs (common and joint) across teaching stages: demonstrations, tests, and feedback. Feedback is either confirmatory (✓) or corrective (✗), and helps refine the learner’s understanding of the robot's reward function in terms of mud cost (w₀), recharge reward (w₁), and action cost (w₂).
+</div>
+
+The research explored how teaching strategies tailored to group or individual beliefs can significantly benefit different groups characterized by varying levels of learner capabilities. For instance, a group belief strategy was found to be advantageous for groups with mostly proficient learners, while individual strategies were better suited for groups with mostly naive learners. We validated these findings in simulated and empirical online studies.
+
