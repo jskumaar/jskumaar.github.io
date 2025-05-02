@@ -15,3 +15,5 @@ about.md
 _projects/*
 _pages/teaching.md
 _pages/publications.md
+_pages/projects.md
+_layouts/about.liquid
