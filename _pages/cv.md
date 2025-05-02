@@ -4,7 +4,7 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 5
-cv_pdf: /assets/pdf/CV_Suresh.pdf # you can also use external links here
+cv_pdf: CV_Suresh.pdf # you can also use external links here
 description: Last updated April 2025.
 toc:
   sidebar: left
