@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Trustworthy interaction between autonomous vehicles and drivers
-description: 
+description: Developed real-time trust estimation and calibration frameworks for autonomous vehicles, using behavioral signals and adaptive communication to prevent driver misuse and disuse.
 img: /assets/img/driver_trust_thumbnail.png
 importance: 5
 category: work

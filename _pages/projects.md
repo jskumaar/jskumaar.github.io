@@ -2,10 +2,10 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: Some of my exciting projects. <a href="/assets/pdf/Research_Statement.pdf" target="_blank">My research statement can be found here.</a>
+description: "Some of my exciting projects. <a href='/assets/pdf/Research_Statement.pdf' target='_blank'>My research statement can be found here.</a>"
 nav: true
 nav_order: 3
-display_categories:
+display_categories: true
 horizontal: true
 ---
 
