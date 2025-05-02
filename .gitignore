@@ -11,3 +11,8 @@ assets/libs/
 node_modules/
 vendor
 .idea
+
+# Windows metadata
+*.lnk
+*.ini
+*Zone.Identifier
