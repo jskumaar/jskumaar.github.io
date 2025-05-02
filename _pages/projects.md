@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: Some of my exciting projects. More recent work will be updated soon! <a href = "https://drive.google.com/file/d/173xGfJtU2xfSRhCRGi2H_StgEmuhBWQy/view?usp=sharing"> My research statement can be found here. </a>
+description: Some of my exciting projects. <a href="/assets/pdf/Research_Statement.pdf" target="_blank">My research statement can be found here.</a>
 nav: true
 nav_order: 3
 display_categories:
