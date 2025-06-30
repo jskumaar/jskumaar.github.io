@@ -16,7 +16,7 @@ The approach dynamically models and updates individual and team beliefs about a 
 
 
 <div class="row">
-    <div class="col-md-8 col-sm-10 mt-3">
+    <div class="col-md-8 col-sm-10 mt-3 mx-auto">
         {% include figure.liquid loading="eager" path="/assets/img/group_teaching_overview.png" title="Belief modeling in group teaching" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
