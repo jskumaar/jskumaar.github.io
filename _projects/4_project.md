@@ -1,40 +1,24 @@
----
+<!-- ---
 layout: page
-title: Trustworthy Interaction Between Automated Vehicles and Pedestrians
-description: Understanding and improving pedestrian trust in automated vehicles through behavioral studies and predictive models for safe, interpretable AV-pedestrian interactions.
-img: /assets/img/pedAV_interaction_thumbnail.png
-importance: 4
+title: Participation detection and Robot Mediation for Inclusive Child Group Interactions
+description: Real-time sensing and robot strategies to support equitable participation among mixed-ability children in group interactions (WIP).
+img: /assets/img/inclusive_robot_mediation.png
+importance: 3
 category: work
 related_publications: true
 ---
 
-This project area focuses on building trustworthy interactions between automated vehicles (AVs) and pedestrians, focusing on pedestrian perception of trust in automated vehicles.  A major challenge is handling ambiguous right-of-way situations, such as unsignalized crosswalks.
+Children with mixed abilities, such as those with visual or auditory impairments, often face challenges in fully participating in group interactions. This project, a collaboration between Carnegie Mellon University (USA) and Universidade de Lisboa (Portugal), seeks to address this issue by developing real-time multimodal group participation metrics and using these metrics to guide socially assistive robot behaviors that foster inclusion and equity in group dynamics.
 
-A human subjects study using an Immersive Virtual Environment (IVE) and a pedestrian walking simulator revealed that aggressive AV driving behavior significantly reduced pedestrian trust, while signalized crosswalks mitigated this effect. Notably, higher trust correlated with riskier pedestrian behavior, such as jaywalking and reduced gaze toward AVs, raising concerns about overtrust.
+Using synchronized cameras and microphones, we extract visual and auditory cues like gaze direction, head nods, speech turns, and interruptions. These are processed in real time using tools such as OpenFace, MediaPipe, etc., to generate composite metrics of group engagement.
 
-<div class="row">
-  <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="/assets/img/VR_ped_simulator.png" title="Immersive pedestrian simulator in virtual reality" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-<div class="caption">
-  Left: A participant uses an omnidirectional treadmill and VR headset to simulate walking in urban environments. Right: First-person view of the VR cityscape with automated vehicles. The immersive virtual environment was used to study pedestrian trust and decision-making in response to AV behavior.
-</div>
-
-
-To validate findings in a real-world setting, a follow-up study was conducted at the Mcity test track using a Wizard-of-Oz AV and a human-driven vehicle (HDV). Surveys confirmed that pedestrians initially trusted HDVs more than AVs, but trust in AVs increased more with repeated interactions. This suggests that familiarity can help reduce skepticism and improve AV-pedestrian relations over time. A key insight from the study was that pedestrians considered HDVs to be more aggressive than AVs, yet they still trusted HDVs more. This suggests that pedestrians may be more forgiving of aggressive behavior from human drivers compared to AVs. It also indicates that pedestrians expect AVs to be less aggressive and more conservative than HDVs
-
+These real-time metrics are used to inform different robot mediation strategies to promote equitable participation. The outcomes of this research are expected to support more inclusive educational, and social environments through intelligent, context-aware robotic systems.
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="/assets/img/pedAV_mcity.png" title="Real-world pedestrian interaction study at Mcity" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid loading="eager" path="/assets/img/inclusive_robot_mediation.jpeg" title="Inclusive group interaction with robot mediator" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 <div class="caption">
-  Comparison of pedestrian interactions with an automated vehicle (top) and a human-driven vehicle (bottom) at the Mcity test facility. Pedestrians initially trusted human-driven vehicles more, but trust in AVs increased with repeated exposure. AVs were perceived as less aggressive, yet less trustworthy at first.
-</div>
-
-
-To support safer interactions, we developed pedestrian behavior prediction models like the Multimodal Hybrid Pedestrian (MHP) model. These models feed into behavior-aware control strategies (e.g., B-MPC), enabling AVs to anticipate pedestrian intent and plan less conservative, yet safer, paths. Such predictive planning allows AVs to act in ways that pedestrians can interpret and trust, improving communication and cooperation in shared urban spaces.
-
-
+  Illustration of a robot facilitating balanced participation among children using real-time sensing of gaze, speech, and nonverbal cues (image made using Sora).
+</div> -->
