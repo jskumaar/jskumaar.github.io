@@ -23,11 +23,6 @@ My research aims to develop autonomous systems that can seamlessly integrate int
 In my current postdoc at CMU, I investigate how robots should communicate their decision-making process, abstracted as reward function weights, in  human-robot groups. My work focuses on designing machine teaching frameworks that adaptively explain robot behavior to groups by modeling their individual and aggregated group beliefs using particle filters. These closed-loop strategies select demonstrations based on evolving team understanding, improving policy learning. I also study how humans respond to unexpected or faulty system behaviors, particularly in automated vehicles. Using multimodal data including facial expressions, audio, and physiological signals I develop techniques to detect subtle emotional cues such as surprise, confusion, and frustration. This line of work enables real-time identification of system-user expectation mismatches and trust breakdowns, laying the foundation for behavior-aware, trust-sensitive autonomy that can adaptively respond to user needs.
 
 <h4>Education</h4>
-<!-- <ul>
-  <li> Ph.D. in Mechanical Engineering at <a href="https://umich.edu/">UM</a>, Ann Arbor, in 2021. </li>
-  <li> M.S. in Mechanical Engineering at <a href="https://umich.edu/">UM</a>, Ann Arbor, in 2018. </li>
-  <li> B.E. in Production Engineering at <a href="https://www.annauniv.edu/"> Anna University </a>, India in 2013. </li>
-</ul> -->
 <ul>
   <li> Ph.D. in Mechanical Engineering at the University of Michigan, Ann Arbor, in 2021. </li>
   <li> M.S. in Mechanical Engineering at the University of Michigan, Ann Arbor, in 2018. </li>
