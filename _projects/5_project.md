@@ -1,17 +1,27 @@
 ---
 layout: page
-title: Pedestrian Behavior Modeling
-description: Developing explainable models of long-term urban pedestrian behavior
+title: Pedestrian Behavior Modeling for Autonomous Vehicles
+description: Explainable hybrid automaton models that predict long-horizon pedestrian crossing behavior, feeding probabilistic forecasts into AV motion planners for safe urban navigation.
 img: /assets/img/ped_typical_behavior.png
-importance: 5
+importance: 3
 category: work
 related_publications: true
 ---
 
-This research area focuses on developing models to accurately predict the future behavior (actions and trajectories) of pedestrians, which is a major operational challenge for Automated Vehicles (AVs) in urban environments. Pedestrian behavior is complex due to its inherent uncertainty and multimodal nature. 
+Pedestrian behavior prediction is one of the hardest open problems in AV perception — pedestrians are multimodal (they can cross or not cross), their intent is latent, and predictions must be accurate over 5–10 second horizons to be useful for planning. This work develops the Multimodal Hybrid Pedestrian (MHP) model: an explainable, probabilistic behavior model based on hybrid automaton theory that predicts long-horizon pedestrian actions and trajectories at unsignalized crosswalks, with direct integration into AV motion planning.
 
-I developed explainable pedestrian behavior models based on hybrid automata theory to model and predict (long-term, 5-10 seconds) their crossing behavior at intersections. The models account for pedestrian decision-making points, such as deciding whether to cross the street or waiting for a suitable gap. Unlike some prior work that assumed all pedestrians intended to cross, this work separately models a pedestrian's intent to cross, leading to less conservative predictions. The model predicts both high-level actions (approaching, waiting, crossing, walking away) and low-level continuous motion evolution. The MHP model was validated on both real-world and virtual datasets involving interactions with human-driven and automated vehicles. The resulting probabilistic predictions from these models can be utilized for AV motion planning to help the AV safely navigate around pedestrians and avoid collisions.
+#### Model Structure
 
+The MHP model is a hybrid automaton with four discrete behavioral modes:
+
+- **Approaching** — pedestrian walking toward the crosswalk
+- **Waiting** — pedestrian paused at the curb, evaluating a crossing gap
+- **Crossing** — pedestrian actively traversing the road
+- **Walking away** — pedestrian departing without crossing
+
+Transition guards encode the pedestrian's decision-making logic: the model separately represents *intent to cross* and *execution of crossing*, unlike prior work that assumed all pedestrians at a crosswalk would eventually cross. This separation produces significantly less conservative predictions for pedestrians who ultimately walk away.
+
+Within each discrete mode, continuous motion evolves according to mode-specific dynamics (linear motion models with learned parameters). The model outputs a probability distribution over future mode sequences and associated continuous trajectories, represented as a set of forward reachable prediction envelopes.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -22,18 +32,35 @@ I developed explainable pedestrian behavior models based on hybrid automata theo
     </div>
 </div>
 <div class="caption">
-    On the left, is a typical pedestrian crossing scenario at an unsignalized crosswalk. Right, shows the hybrid automaton model of a pedestrian.
+    Left: a typical pedestrian crossing scenario at an unsignalized crosswalk. Right: the hybrid automaton model with four discrete modes and continuous motion dynamics in each.
 </div>
 
-The resulting automaton model is more likely to predict the ground truth trajectory compared to two baseline models - a baseline hybrid automaton model and a constant velocity model. The MHP model is applicable to a wide variety of urban scenarios including midblock crosswalks, intersections, one-way, and two-way streets, and the probabilistic predictions from the model can be utilized for AV motion planning.
+#### Validation
+
+The MHP model was validated against two baselines — a constant velocity model and a baseline hybrid automaton that does not separately model crossing intent — on two datasets:
+
+- **Real-world data**: pedestrian trajectories collected on Michigan streets involving interactions with both human-driven and automated vehicles
+- **Virtual reality data**: pedestrian behavior captured using an omnidirectional treadmill and VR headset in a simulated urban environment with AV interactions
+
+Across both datasets, the MHP model's probabilistic predictions more frequently contained the ground truth trajectory compared to both baselines, particularly in scenarios where pedestrians wait and then cross — the mode transition the constant velocity model cannot represent {% cite jayaraman2021multimodal %} {% cite jayaraman2020analysis %}.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/MHP_FRS.png" title="example image" class="Illustration of multimodal pedestrian behavior" %}
+        {% include figure.liquid loading="eager" path="/assets/img/MHP_FRS.png" title="Multimodal pedestrian prediction envelopes" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
     <p align="justify">
-      e <sup>1</sup><sub>p</sub>,  e <sup>2</sup><sub>p</sub>, and  e <sup>3</sup><sub>p</sub> are prediction envelopes at prediction time step  t <sub>p</sub>.  e <sup>1</sup><sub>p</sub> is the prediction envelope of the constant velocity model and  e <sup>2</sup><sub>p</sub> and  e <sup>3</sup><sub>p</sub> are the prediction envelopes corresponding to two possible future behaviors—waiting by the crosswalk and crossing—identified by the MHP model. FRSP is the forward reachable set at t <sub>p</sub> assuming the pedestrian could have walked in any direction with a maximum speed of 2.5 m/s. The green line indicates observed ground truth trajectory up to time  and the solid orange line indicates the ground truth trajectory after t <sub>p</sub> . The constant velocity predicts envelope  e <sup>1</sup><sub>p</sub> based on the initial heading of the pedestrian. However, the pedestrian turns to cross at the crosswalk, which is captured by the prediction envelope  e <sup>3</sup><sub>p</sub> of the MHP model.
+      Prediction envelopes at time t<sub>p</sub>. e<sup>1</sup><sub>p</sub> is the constant velocity prediction. e<sup>2</sup><sub>p</sub> and e<sup>3</sup><sub>p</sub> are the MHP predictions for waiting and crossing, respectively. The pedestrian turns to cross (solid orange), which the constant velocity model misses but the MHP model captures via e<sup>3</sup><sub>p</sub>.
     </p>
 </div>
+
+#### Integration with AV Motion Planning
+
+The probabilistic predictions from the MHP model feed directly into a Behavior-aware Model Predictive Controller (B-MPC) for AV motion planning. The B-MPC uses the predicted pedestrian mode probabilities and trajectory envelopes as constraints and costs, enabling the AV to plan paths that are safe across the distribution of possible pedestrian futures — not just the most likely one. This produces less conservative AV behavior compared to worst-case planning while maintaining safety guarantees {% cite jayaraman2020efficient %} {% cite jayaraman2021automated %}.
+
+The model is applicable across urban scenarios: midblock crosswalks, signalized and unsignalized intersections, one-way and two-way streets.
+
+#### Transferable Engineering
+
+This work is directly applicable to any AV stack requiring long-horizon pedestrian prediction: the MHP model is a plug-in probabilistic predictor that outputs trajectory distributions compatible with standard MPC and sampling-based planners.

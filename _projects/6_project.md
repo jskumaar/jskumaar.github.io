@@ -1,9 +1,9 @@
----
+﻿---
 layout: page
 title: Trustworthy Interaction Between Automated Vehicles and Pedestrians
 description: Understanding and improving pedestrian trust in automated vehicles through behavioral studies and predictive models for safe, interpretable AV-pedestrian interactions.
 img: /assets/img/pedAV_interaction_thumbnail.png
-importance: 6
+importance: 7
 category: work
 related_publications: true
 ---
@@ -36,5 +36,6 @@ To validate findings in a real-world setting, a follow-up study was conducted at
 
 
 To support safer interactions, we developed pedestrian behavior prediction models like the Multimodal Hybrid Pedestrian (MHP) model. These models feed into behavior-aware control strategies (e.g., B-MPC), enabling AVs to anticipate pedestrian intent and plan less conservative, yet safer, paths. Such predictive planning allows AVs to act in ways that pedestrians can interpret and trust, improving communication and cooperation in shared urban spaces.
+
 
 

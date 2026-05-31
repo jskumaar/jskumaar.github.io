@@ -1,33 +1,72 @@
 ---
 layout: page
-title: Automatic Detection of Unexpected AI Behavior from Human Cues
-description: Evaluating the detection of unexpected AI behavior in autonomous vehicles by analyzing subtle human emotional cues
+title: Real-Time Detection of Unexpected AI Behavior from Human Emotional Cues
+description: A multimodal pipeline using OpenFace 2.0, OpenSMILE, and XGBoost (79.4% TPR, ~2.7s latency) to detect user emotional responses to unexpected in-vehicle system behaviors, with autonomous verbal mitigation.
 img: /assets/img/driver_cues_thumbnail.png
-importance: 2
+importance: 5
 category: work
 related_publications: true
 ---
 
-AI-powered intelligent systems such as those in automated vehicles can potentially make mistakes or act in ways that violate user expectations. These “expectation mismatches” can range from harmless anomalies to serious safety concerns. This research aims to develop a robust framework for automatically detecting unexpected AI behavior through subtle human emotional and behavioral cues, with the goal of supporting trust-aware, user-sensitive AI adaptation.
+Autonomous systems inevitably make mistakes or behave unexpectedly. When this happens, the system needs to detect the user's negative emotional response and take corrective action — but most systems lack the perceptual capability to do this. This project builds a full closed-loop pipeline: multimodal data collection and feature extraction, real-time binary classification of emotional responses, and autonomous deployment of verbal mitigation strategies. The work is grounded in the **ARISE** dataset (Autonomous vehicle Reactions to In-vehicle System Events), a purpose-built labeled dataset of human emotional responses to unexpected in-vehicle system behaviors.
 
-The approach involves collecting and analyzing user behavioral responses to unexpected events in a driving simulator. The study exposes users to stimuli designed to induce surprise, confusion, and frustration, emotional responses considered primary triggers for reacting to unexpected system behaviors. A validated multi-modal multi-camera dataset is collected, including video, audio, and heart rate data, specifically for subtle human emotional responses and reactions in a vehicle environment. Detecting negative emotional responses, even when subtle or from non-critical behaviors, is seen as a strong signal for refining machine learning models and preventing erosion of user confidence and trust.
+#### Dataset: ARISE (60 Participants)
 
-The study found that users perceive and react differently to unexpected behaviors from fully autonomous vehicles, with distinguishable emotional states such as surprise, confusion, and frustration. Surprise was typically brief and triggered by ambiguous events, while confusion involved unclear system behavior, and frustration arose from repeated or unresolved goal interference {% cite ngo2025beyondReactions %}. 
+ARISE was collected from **60 participants** in a driving simulator study across two rounds. Each participant experienced scenarios designed to trigger three target emotional states:
 
-Facial expression analysis using OpenFace revealed statistically significant patterns, such as changes in blinking, lip tension, and chin movement, that differentiated between these emotional states. These results demonstrate that computer vision can detect nuanced emotional cues, enabling AI systems to infer when users experience an expectation mismatch and respond appropriately. This suggests a promising direction for building emotionally-aware, adaptive AI systems that maintain user trust and engagement in autonomous settings.
+- **Surprise**: system does something ambiguous and unexpected (e.g., plays a wrong song without warning)
+- **Confusion**: system behavior is unclear or contradictory (e.g., ignores a repeated voice command)
+- **Frustration**: system fails repeatedly, accumulating over multiple attempts (e.g., keeps playing incorrect music)
 
+Sensors captured multimodal behavioral signals throughout:
+- **Video** (30 fps): two Luxonis cameras at the steering wheel and rear-mirror positions
+- **Audio**: microphone capturing speech prosody and ambient sound during interactions
+- **Physiological**: Garmin fitness tracker for continuous heart rate recording
+- **System events**: timestamped logs of all system behaviors and voice commands
+
+All emotional response intervals were manually labeled using an internal annotation tool, yielding binary labels (response / no response) aligned to video timestamps {% cite ngo2025beyondReactions %}.
 
 <div class="row">
     <div class="col-md-8 col-sm-10 mt-3 mx-auto">
-        {% include figure.liquid loading="eager" path="/assets/img/expectations_mismatch_detection.png" title="Enhancing AI Trust through Emotional Cues" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="/assets/img/expectations_mismatch_detection.png" title="Detection and mitigation pipeline" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
     <p align="justify">
-        This figure illustrates a closed-loop framework for improving trust using user emotional responses.
+        The closed-loop pipeline: multimodal inputs (video, audio, system events) are processed through OpenFace 2.0 and OpenSMILE feature extraction, classified in real time by an XGBoost model trained on ARISE, and used to autonomously trigger verbal mitigation strategies when an emotional response is detected.
     </p>
 </div>
 
-Building on these findings, we are developing a real-time event detection system that continuously monitors human behavioral signals such as facial expressions, audio prosody, and physiological indicators, to identify moments when users perceive AI behavior as unexpected. To capture the nuanced and temporally extended nature of human responses, we are exploring temporal models, including RNN-based architectures and Transformer models, that can fuse multimodal inputs and detect subtle shifts in user state over time. This cross-modal detector will enable AI systems—particularly in safety-critical or high-trust domains—to adapt their explanations, interventions, or behaviors dynamically, based on the user’s inferred awareness and emotional context {% cite ngo2025anticipating %}.
+#### Detection Pipeline
 
-This line of research advances human-centered AI by improving not only how systems explain themselves, but also when and why they choose to explain, anchored in real-time understanding of user mental and emotional states.
+**Feature Extraction.** Raw video is processed through **OpenFace 2.0** to extract 17 facial action unit (AU) intensities per frame, capturing facial muscle movements associated with each emotional state (e.g., AU1/AU2/AU5 for surprise, AU4/AU7 for confusion, AU23/AU24 for frustration). Raw audio is processed through **OpenSMILE** to extract Mel-Frequency Cepstral Coefficient (MFCC) features, capturing prosodic and vocal tract changes that accompany emotional responses. Features are aggregated into **0.5-second windows**.
+
+**Classification.** A binary **XGBoost classifier** is trained on the ARISE feature set (80/20 train-test split with data augmentation) to predict whether any emotional response is occurring in a given window. The binary framing — response vs. no response — is used for real-time deployment, making the detector agnostic to which specific emotion is occurring. This is the appropriate formulation for a mitigation system, where the priority is detecting any expectation mismatch, not labeling the emotion precisely.
+
+#### Real-Time Performance
+
+The detector produces a classification output every **0.5 seconds** during live system operation, giving multiple detection opportunities within a single response event. Performance from live deployment (Study 2, N=30 participants) {% cite ngo2025anticipating %}:
+
+| Emotional State | True Positive Rate | Mean Detection Latency |
+|---|---|---|
+| Overall | **79.44%** | — |
+| Surprise | — | **2.69 s** |
+| Confusion | — | **2.93 s** |
+| Frustration | — | **17.66 s** |
+
+Surprise and confusion have early-onset facial responses, enabling sub-3-second detection. Frustration requires sustained repeated failures to develop, explaining the longer detection window. The multi-window architecture deliberately trades per-window precision for event-level coverage — missing a reaction is costlier than a brief detection delay for a mitigation system.
+
+#### Verbal Mitigation Study
+
+The live detector was deployed to autonomously trigger **acknowledgment and apology** as mitigation strategies upon detection. Comparing 30 participants with autonomous mitigation (Study 2) against 30 from the baseline data collection (Study 1, no mitigation):
+
+- Acknowledgment and apology alone are **not sufficient** to meaningfully reduce facial action unit activation or self-reported frustration over repeated encounters
+- A **novelty effect** was observed: mitigation reduced AU activation briefly in early trials, but this effect disappeared in later trials while self-reported frustration continued to rise — users' faces adapted, but their conscious frustration did not
+- Qualitative interviews revealed that users interpret apology as a signal that **corrective action** will follow; when no correction arrives, dissatisfaction compounds
+- The majority of participants preferred mitigation strategies that include **self-correction, explanation, or cancellation** rather than acknowledgment alone
+
+These findings motivate the next stage of this research: temporal models (LSTM / Transformer architectures) for multimodal fusion over longer time horizons, and richer mitigation strategies that pair acknowledgment with substantive corrective action {% cite ngo2025anticipating %}.
+
+#### Transferable Engineering
+
+This detection pipeline is applicable to any in-cabin sensing or HMI system requiring real-time user emotional state inference — ADAS, in-vehicle voice assistants, social robots, and collaborative AI systems. The ARISE dataset provides a benchmark for future emotional response detection models in automotive and related high-trust contexts.

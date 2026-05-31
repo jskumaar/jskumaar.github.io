@@ -2,32 +2,35 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href="https://www.ri.cmu.edu/"> <small> Mechanical Engineering </small> </a> <b><font size="+2">.</font></b> <a href="https://www.cmu.edu/"> <small>Carnegie Mellon University</small></a> <b> <font size="+2">.</font></b> <small> Postdoctoral researcher at </small> <a href="https://aipex-lab.github.io/"><small>AiPEX
+subtitle: 'Postdoctoral Researcher &nbsp;·&nbsp; <a href="https://www.ri.cmu.edu/">Robotics Institute</a> &nbsp;·&nbsp; <a href="https://www.cmu.edu/">Carnegie Mellon University</a> &nbsp;·&nbsp; <a href="https://aipex-lab.github.io/">AiPEX Lab</a>'
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info:
+  image_circular: false
+  more_info: >
+    <p>sureshkj@andrew.cmu.edu</p>
+    <p><a href="/cv">Curriculum Vitae</a></p>
 
-news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+news: true
+selected_papers: true
+social: true
 ---
 
-My research aims to develop autonomous systems that can seamlessly integrate into complex, human-centric environments. Motivated by the critical need for mutual understanding between humans and autonomous systems, my work focuses on two key thrusts:
+I build autonomous systems that work effectively alongside humans — predicting how people will move and behave, detecting when they are confused or frustrated, and explaining what a robot is doing and why. My work spans the full stack: from human behavior modeling and real-time multimodal perception to planning algorithms, machine teaching frameworks, and validated user studies with physical robots and vehicles. I am actively seeking research and engineering positions in robotics and autonomous systems.
 
-- Modeling human behavior to enable robots to interpret human intentions, actions, and mental states, ensuring safe and effective interactions in dynamic, real-world environments.
-- Designing explainable decision-making frameworks that make autonomous systems' behavior intuitive and transparent to human users, fostering trust and collaboration in both dyadic and group settings.
+**Research.** My work targets two core challenges in deploying robots in human-centric environments. The first is making robots *human-aware* — developing probabilistic pedestrian and driver behavior models that feed into AV motion planners, and real-time multimodal systems that detect user surprise, confusion, and frustration from facial action units and audio features, enabling robots to sense and adapt to human state. The second is making robots *understandable* — designing machine teaching frameworks that explain robot decision-making to individuals and groups using particle filter-based belief models and information-theoretic demonstration selection, so that humans can build accurate mental models of robot policy.
 
-I investigate how robots should communicate their decision-making process, abstracted as reward function weights, in  human-robot groups. My work focuses on designing machine teaching frameworks that adaptively explain robot behavior to groups by modeling their individual and aggregated group beliefs using particle filters. These closed-loop strategies select demonstrations based on evolving team understanding, improving policy learning. I also study how humans respond to unexpected or faulty system behaviors, particularly in automated vehicles. Using multimodal data including facial expressions, audio, and physiological signals, I develop techniques to detect subtle emotional cues such as surprise, confusion, and frustration. This line of work enables real-time identification of system-user expectation mismatches and trust breakdowns, laying the foundation for behavior-aware, trust-sensitive autonomy that can adaptively respond to user needs.
+**Engineering.** I design and implement end-to-end systems: a safety-aware LLM action planner grounded in ISO robotics safety standards via a Neo4j knowledge graph with GraphRAG retrieval and VLM-based scene understanding, executing on a Franka Panda in PyBullet; a contact-aware teleoperation controller that retargets human MOCAP input via optimal control and enforces physical grasp stability through Grasp Wrench Space constraints in a TAMP framework; a real-time binary XGBoost classifier (79.4% true positive rate, ~2.7 s mean detection latency) deployed autonomously in a driving simulator using OpenFace 2.0 facial action unit features and OpenSMILE MFCC audio features; and a Kalman filter-based driver trust estimator with adaptive communication that reduced trust miscalibration by ~40% in user studies.
+
+**Skills:** Python &nbsp;·&nbsp; PyTorch &nbsp;·&nbsp; PyBullet &nbsp;·&nbsp; OpenFace 2.0 &nbsp;·&nbsp; OpenSMILE &nbsp;·&nbsp; XGBoost &nbsp;·&nbsp; Neo4j / GraphRAG &nbsp;·&nbsp; LLMs / VLMs (Llama, Qwen) &nbsp;·&nbsp; Kalman &amp; Particle Filters &nbsp;·&nbsp; MPC &nbsp;·&nbsp; Inverse Reinforcement Learning &nbsp;·&nbsp; Hybrid Automata &nbsp;·&nbsp; MOCAP Systems &nbsp;·&nbsp; Franka Panda
 
 <h4>Education</h4>
 <ul>
-  <li> Ph.D. in Mechanical Engineering at the University of Michigan, Ann Arbor, in 2021. </li>
-  <li> M.S. in Mechanical Engineering at the University of Michigan, Ann Arbor, in 2018. </li>
-  <li> B.E. in Production Engineering at Anna University, India in 2013. </li>
+  <li>Ph.D. in Mechanical Engineering, University of Michigan, Ann Arbor (2021)</li>
+  <li>M.S. in Mechanical Engineering, University of Michigan, Ann Arbor (2018)</li>
+  <li>B.E. in Production Engineering, Anna University, India (2013)</li>
 </ul>
 
-<h4>Research Interests</h4>  
-human behavior modeling, explainable decision-making, group human-AI/robot interactions, trust in AI/robots, interaction-aware control, human-AI/robot communication, human-AI/robot teaming, socially intelligent agents
+<h4>Research Interests</h4>
+Human behavior modeling &nbsp;·&nbsp; Explainable AI/robot decision-making &nbsp;·&nbsp; Safety-aware robot planning &nbsp;·&nbsp; Human-robot teaming &nbsp;·&nbsp; Trust in autonomous systems &nbsp;·&nbsp; Multimodal human state estimation

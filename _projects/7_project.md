@@ -1,14 +1,24 @@
 ---
 layout: page
-title: Trustworthy interaction between autonomous vehicles and drivers
-description: Developed real-time trust estimation and calibration frameworks for autonomous vehicles, using behavioral signals and adaptive communication to prevent driver misuse and disuse.
+title: Real-Time Trust Estimation and Calibration for Autonomous Vehicles
+description: A Kalman filter-based framework that continuously estimates driver trust from behavioral signals and actively manages trust through adaptive communication, reducing miscalibration by ~40%.
 img: /assets/img/driver_trust_thumbnail.png
-importance: 7
+importance: 4
 category: work
 related_publications: true
 ---
 
-This body of research explores how to measure and manage driver trust in automated driving systems (ADSs), with a focus on preventing trust miscalibration—situations where drivers place too little or too much trust in automation. A key contribution is the development of a Kalman filter-based framework that continuously estimates driver trust in real time by integrating behavioral cues such as eye-tracking, system usage, and performance on a non-driving task. These estimations were shown to track trust levels effectively and adapt to driver behavior across varied driving conditions.
+Driver trust miscalibration — where drivers place too much or too little trust in automation — is a major safety hazard in autonomous driving. Overtrust leads to dangerous over-reliance; undertrust leads to unnecessarily frequent takeovers. This work builds a closed-loop trust management system: a real-time estimator that infers driver trust from behavioral signals, and a calibration controller that adjusts how the ADS communicates with the driver to correct miscalibration before it causes unsafe behavior.
+
+#### Trust Estimation: Kalman Filter Framework
+
+Driver trust is modeled as a continuous latent state $$T_k \in [0, 1]$$ that evolves as the driver observes ADS performance events. The estimator uses a Kalman filter with three behavioral measurement inputs:
+
+- **Eye-tracking focus** ($$\phi$$): fraction of time the driver monitors the road vs. engages in non-driving tasks — a proxy for vigilance and trust-related attention allocation
+- **ADS usage time** ($$\upsilon$$): how long the driver leaves the system engaged without intervention — higher usage correlates with higher trust
+- **Secondary task performance** ($$\pi$$): performance on a concurrent non-driving task, which increases when the driver trusts the ADS to handle driving
+
+The filter is driven by discrete ADS performance events — true alarms ($$L$$: system correctly warns of a hazard), false alarms ($$F$$: incorrect warning), and misses ($$M$$: missed hazard) — which shift the trust state estimate up or down accordingly. Critically, the estimator operates continuously without requiring disruptive self-report surveys, providing a real-time trust signal suitable for closed-loop control {% cite azevedo2021real %}.
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
@@ -16,10 +26,17 @@ This body of research explores how to measure and manage driver trust in automat
   </div>
 </div>
 <div class="caption">
-  A Kalman filter-based estimator computes real-time trust levels using driver behavioral cues—eye-tracking focus (ϕ), ADS usage time (υ), and secondary task performance (π). Trust is estimated continuously as drivers interact with an ADS that may issue true alarms (L), false alarms (F), or misses (M), without relying on disruptive self-reports.
+  The Kalman filter estimator computes real-time trust T<sub>k</sub> from eye-tracking focus (ϕ), ADS usage time (υ), and secondary task performance (π), updated by system performance events (true alarms L, false alarms F, misses M).
 </div>
 
-Building on the above work, a trust calibration framework was introduced that doesn't just passively estimate trust, but actively manages trust by adjusting how the ADS communicates with the driver. When a miscalibration is detected—such as a mismatch between a driver’s trust level and the system’s actual capabilities—the system responds with context-aware messages to either encourage or warn the driver. Experimental results show that this adaptive communication reduced miscalibrated trust periods by approximately 40%, helping avoid misuse or disuse of the system and improving safety.
+#### Trust Calibration: Context-Aware Communication Controller
+
+Building on the estimator, a trust calibration controller compares the estimated trust $$T_k$$ against the ADS's known capability envelope. When a miscalibration is detected:
+
+- If $$T_k$$ is **too high** relative to ADS capability (overtrust): the system selects a warning message designed to reduce trust and increase driver vigilance
+- If $$T_k$$ is **too low** relative to ADS capability (undertrust): the system selects an encouraging message designed to increase confidence and reduce unnecessary takeovers
+
+Message selection is context-aware — different messages are triggered based on the driving scenario (highway, urban, adverse weather) and the magnitude of the miscalibration. This avoids intrusive or repeated messaging that would itself frustrate the driver {% cite azevedo2020context %}.
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
@@ -27,5 +44,13 @@ Building on the above work, a trust calibration framework was introduced that do
   </div>
 </div>
 <div class="caption">
-  The trust calibration system compares the estimated trust (Tₖ) with the AV’s known capabilities. If miscalibration is detected, the system selects an adaptive communication strategy to influence the driver’s trust via messages, helping bring trust levels back into alignment.
+  The calibration controller compares estimated trust T<sub>k</sub> to ADS capability bounds. When miscalibrated, it selects an adaptive message to shift trust toward the appropriate range.
 </div>
+
+#### Results
+
+Experimental user studies showed that the adaptive calibration framework reduced the duration of miscalibrated trust periods by approximately **40%** compared to a no-communication baseline, across both overtrust and undertrust conditions {% cite azevedo2020context %}. The false alarm / miss effects on trust were also characterized: false alarms produced larger trust decrements than misses produced trust decrements, informing how ADS reliability specs map to trust dynamics {% cite azevedo2020comparing %}.
+
+#### Transferable Engineering
+
+The Kalman filter trust estimator is a generic state estimator that can be adapted to any human-machine system where behavioral proxies for trust or engagement are observable. The closed-loop calibration controller is directly applicable to ADAS, semi-autonomous systems, and any deployed system where trust miscalibration is a safety concern.
