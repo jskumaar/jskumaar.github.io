@@ -2,17 +2,16 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
+title: # the website title (if blank, full name will be used instead)
 first_name: Suresh Kumaar
 middle_name:
 last_name: Jayaraman
 contact_note: >
   Email is probably the best way to reach me.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  My personal website.
+  Postdoctoral Researcher at CMU Robotics Institute. Research in human-robot interaction, safety-aware robot planning, and explainable AI for autonomous systems.
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+  &copy; 2025 Suresh Kumaar Jayaraman
 keywords: human behavior modeling, explainable AI decision-making, group human-robot interaction, human-robot communication, human-robot trust and teaming, interaction-aware robot control # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: hri_website_icon.jpg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
