@@ -22,7 +22,7 @@ The SA-LLM pipeline has five tightly integrated components:
 
 **4. LLM Action Planning (Qwen3-8B).** The reasoning LLM receives the scene description, retrieved safety rules, the human command, and the available action primitive set. It outputs a structured plan specifying `IS_SAFE`, `SPEED_LIMIT`, `FORCE_LIMIT`, `SAFETY_REASONING`, and an ordered action sequence.
 
-**5. Action Primitives and Execution.** Nine primitives are defined — `move_to(obj)`, `pick(obj)`, `place(x,y,z)`, `hand_over()`, `retract()`, `wait(s)`, `speak(msg)`, `stop()`, `adjust_speed(factor)` — which the LLM composes into executable sequences. Actions are dispatched to a simulated Franka Panda (7-DOF, 855 mm reach) in PyBullet.
+**5. Action Primitives and Execution.** Nine primitives are defined — `move_to(obj)`, `pick(obj)`, `place(x,y,z)`, `hand_over()`, `retract()`, `wait(s)`, `speak(msg)`, `stop()`, `adjust_speed(factor)` — which the LLM composes into executable sequences. Actions are dispatched to a simulated Franka Panda (7-DOF, 855 mm reach) in PyBullet and deployed on physical hardware via ROS and the `franka_ros` / Franka Control Interface (FCI) stack, providing a clean sim-to-real deployment path with the same 9 primitives in both environments.
 
 #### Evaluation
 
@@ -39,4 +39,4 @@ The pipeline correctly retrieves and applies ISO safety constraints when grounde
 
 #### Transferable Engineering
 
-This work directly applies to: cobot deployment in manufacturing and logistics, safety certification workflows (CE marking, ISO compliance), LLM-powered robot task planning, and embodied AI systems that must reason over structured regulatory domain knowledge at runtime.
+This work directly applies to: cobot deployment in manufacturing and logistics, safety certification workflows (CE marking, ISO compliance), LLM-powered robot task planning, embodied AI systems that must reason over structured regulatory domain knowledge at runtime, and sim-to-real robot deployment pipelines that require compliant behavior in human-occupied workspaces.

@@ -8,7 +8,7 @@ category: work
 related_publications: true
 ---
 
-When robots work alongside humans, people need to understand *how the robot makes decisions* — not just what it does. This project develops a closed-loop machine teaching framework that explains robot decision-making to human groups by modeling individual and team beliefs as particle filters, selecting demonstrations to maximize information gain via counterfactual reasoning, and scaffolding the teaching process with increasing conceptual complexity.
+When robots work alongside humans, people need to understand *how the robot makes decisions* — not just what it does. This project develops a closed-loop machine teaching framework that explains robot decision-making to human groups by modeling individual and team beliefs as particle filters, selecting demonstrations to maximize information gain via counterfactual reasoning, and scaffolding the teaching process with increasing conceptual complexity. The underlying framework — learning a reward function from human demonstrations and feedback — is closely related to imitation learning and inverse reinforcement learning, and the belief-tracking approach generalizes to any robot learning system that needs to model a human's understanding of a learned policy.
 
 #### Problem Formulation: IRL in an MDP
 
