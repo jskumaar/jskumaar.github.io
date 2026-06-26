@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 title: Participation detection and Robot Mediation for Inclusive Child Group Interactions
 description: Real-time sensing and robot strategies to support equitable participation among mixed-ability children in group interactions (WIP).
@@ -22,4 +22,3 @@ These real-time metrics are used to inform different robot mediation strategies 
 <div class="caption">
   Illustration of a robot facilitating balanced participation among children using real-time sensing of gaze, speech, and nonverbal cues (image made using Sora).
 </div>
-
