@@ -6,6 +6,7 @@ img: /assets/img/group_teaching_thumbnail.png
 importance: 6
 category: work
 related_publications: true
+github: https://github.com/HARPLab/group_teaching
 ---
 
 When robots work alongside humans, people need to understand *how the robot makes decisions* — not just what it does. This project develops a closed-loop machine teaching framework that explains robot decision-making to human groups by modeling individual and team beliefs as particle filters, selecting demonstrations to maximize information gain via counterfactual reasoning, and scaffolding the teaching process with increasing conceptual complexity. The underlying framework — learning a reward function from human demonstrations and feedback — is closely related to imitation learning and inverse reinforcement learning, and the belief-tracking approach generalizes to any robot learning system that needs to model a human's understanding of a learned policy.
@@ -66,8 +67,10 @@ Three teaching strategies — individual, team common belief, and team joint bel
 
 - **Group belief strategy** (targeting team common belief) was superior for groups with **mostly proficient learners**: efficient convergence of shared team understanding with fewer demonstrations
 - **Individual strategy** was superior for groups with **mostly naïve learners**: aggregate beliefs from naïve learners would mislead the teaching selection, so per-person targeting was necessary
-- Both strategies significantly outperformed an unstructured baseline in simulation {% cite jayaraman2024understanding %} and in an **empirical online study with human participants** {% cite jayaraman2025groupTeaching %}
+- Both strategies significantly outperformed an unstructured baseline in simulation {% cite jayaraman2024understanding %} and in an **empirical online study with human participants** {% cite jayaraman2026explaining %}
 
 #### Transferable Engineering
 
 The particle filter belief estimator is a general Bayesian inference engine applicable wherever a system needs to track a human's latent understanding or intent from behavioral observations. The counterfactual information-gain demonstration selection criterion is directly applicable to active learning, RLHF query selection, and any teaching or explanation system where the goal is to maximize information transfer per human interaction.
+
+**Code:** [HARPLab/group_teaching](https://github.com/HARPLab/group_teaching) (IROS 2024 simulation framework) &nbsp;·&nbsp; [HARPLab/flask_closed_loop_teaching](https://github.com/HARPLab/flask_closed_loop_teaching/tree/team_teaching) (online team-teaching study platform)

@@ -6,6 +6,7 @@ img: /assets/img/ped_typical_behavior.png
 importance: 3
 category: work
 related_publications: true
+github: https://github.com/jskumaar/pedestrianHybridModel
 ---
 
 Pedestrian behavior prediction is one of the hardest open problems in AV perception — pedestrians are multimodal (they can cross or not cross), their intent is latent, and predictions must be accurate over 5–10 second horizons to be useful for planning. This work develops the Multimodal Hybrid Pedestrian (MHP) model: an explainable, probabilistic behavior model based on hybrid automaton theory that predicts long-horizon pedestrian actions and trajectories at unsignalized crosswalks, with direct integration into AV motion planning.

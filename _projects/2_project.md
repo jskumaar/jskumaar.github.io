@@ -6,6 +6,7 @@ img: /assets/img/driver_cues_thumbnail.png
 importance: 5
 category: work
 related_publications: true
+github: https://github.com/Augmented-Design-Capability-Studio/in-car-passenger-monitoring
 ---
 
 Autonomous systems inevitably make mistakes or behave unexpectedly. When this happens, the system needs to detect the user's negative emotional response and take corrective action — but most systems lack the perceptual capability to do this. This project builds a full closed-loop pipeline: multimodal data collection and feature extraction, real-time binary classification of emotional responses, and autonomous deployment of verbal mitigation strategies. The work is grounded in the **ARISE** dataset (Autonomous vehicle Reactions to In-vehicle System Events), a purpose-built labeled dataset of human emotional responses to unexpected in-vehicle system behaviors.
@@ -45,7 +46,7 @@ All emotional response intervals were manually labeled using an internal annotat
 
 #### Real-Time Performance
 
-The detector produces a classification output every **0.5 seconds** during live system operation, giving multiple detection opportunities within a single response event. Performance from live deployment (Study 2, N=30 participants) {% cite ngo2025anticipating %}:
+The detector produces a classification output every **0.5 seconds** during live system operation, giving multiple detection opportunities within a single response event. Performance from live deployment (Study 2, N=30 participants) {% cite ngo2026apology %}:
 
 | Emotional State | True Positive Rate | Mean Detection Latency |
 |---|---|---|
@@ -65,7 +66,7 @@ The live detector was deployed to autonomously trigger **acknowledgment and apol
 - Qualitative interviews revealed that users interpret apology as a signal that **corrective action** will follow; when no correction arrives, dissatisfaction compounds
 - The majority of participants preferred mitigation strategies that include **self-correction, explanation, or cancellation** rather than acknowledgment alone
 
-These findings motivate the next stage of this research: temporal models (LSTM / Transformer architectures) for multimodal fusion over longer time horizons, and richer mitigation strategies that pair acknowledgment with substantive corrective action {% cite ngo2025anticipating %}.
+These findings motivate the next stage of this research: temporal models (LSTM / Transformer architectures) for multimodal fusion over longer time horizons, and richer mitigation strategies that pair acknowledgment with substantive corrective action {% cite ngo2026apology %}.
 
 #### Transferable Engineering
 

@@ -5,7 +5,8 @@ description: A teleoperation system using camera-based hand tracking and VR inte
 img: /assets/img/pedAV_interaction_thumbnail.png
 importance: 2
 category: work
-related_publications: false
+related_publications: true
+github: https://github.com/Astronauty/hand-control
 ---
 
 Teleoperation is the primary mechanism for collecting high-quality robot manipulation data for policy learning — but translating human hand motion into robot-feasible, contact-stable configurations remains a hard problem. This project develops a contact-aware teleoperation system that handles the full manipulation pipeline: tracking the operator's hand pose from camera input, retargeting that motion to robot-feasible configurations, recommending grasp locations, and enforcing physical contact stability through a two-stage optimal control formulation within a Task and Motion Planning (TAMP) framework. The system supports multiple input modalities — camera-based hand tracking and a VR interface — enabling flexible operator setups while using the same underlying retargeting and constraint formulation. The system is implemented as a sim-to-real pipeline: the controller is developed and validated in PyBullet simulation, then deployed on the physical Franka Panda using ROS and the `franka_ros` interface, with identical motion primitives and constraint formulations in both environments.
@@ -34,4 +35,4 @@ The two-stage decomposition cleanly separates free-space motion (approach) from 
 
 #### Transferable Engineering
 
-This work applies directly to: robot learning data collection pipelines (teleoperation datasets for imitation learning and RLHF), humanoid robot manipulation, contact-rich task execution, and any system that must translate human intent into physically consistent, constraint-satisfying robot motion. The teleoperation data collected through this system serves as high-quality human demonstration data for training robot learning policies — bridging the gap between teleoperation infrastructure and downstream imitation learning or reinforcement learning from human feedback.
+This work applies directly to: robot learning data collection pipelines (teleoperation datasets for imitation learning and RLHF), humanoid robot manipulation, contact-rich task execution, and any system that must translate human intent into physically consistent, constraint-satisfying robot motion. The teleoperation data collected through this system serves as high-quality human demonstration data for training robot learning policies — bridging the gap between teleoperation infrastructure and downstream imitation learning or reinforcement learning from human feedback {% cite nguyen2026contactAware %}.
