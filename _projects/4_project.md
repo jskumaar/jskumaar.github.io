@@ -2,7 +2,7 @@
 layout: page
 title: Safety-Aware LLM Planning for Human-Robot Collaboration in Manufacturing
 description: An end-to-end pipeline integrating LLM action planning with a Neo4j knowledge graph of ISO safety standards and VLM scene understanding, enabling compliant cobot behavior in manufacturing settings.
-img: /assets/img/driver_trust_thumbnail.png
+img: /assets/img/sa_llm_scenarios.png
 importance: 1
 category: work
 related_publications: false
