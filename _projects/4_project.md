@@ -6,6 +6,7 @@ img: /assets/img/sa_llm_scenarios.png
 importance: 2
 category: work
 related_publications: false
+github: https://github.com/malavikm/standards-grounded-llm-hrc
 ---
 
 Manufacturing environments increasingly deploy collaborative robots (cobots) that must share workspace with human workers. Ensuring safe operation requires real-time awareness of both the physical scene and applicable safety regulations — a challenge traditional rule-based planners handle poorly. This project develops a Safety-Aware LLM (SA-LLM) pipeline that integrates large language model reasoning with a structured knowledge graph of industrial safety standards to generate compliant, context-aware robot action sequences.
