@@ -3,7 +3,7 @@ layout: page
 title: Trustworthy Interaction Between Automated Vehicles and Pedestrians
 description: Understanding and improving pedestrian trust in automated vehicles through behavioral studies and predictive models for safe, interpretable AV-pedestrian interactions.
 img: /assets/img/pedAV_interaction_thumbnail.png
-importance: 7
+importance: 9
 category: work
 related_publications: true
 ---

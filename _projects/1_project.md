@@ -3,7 +3,7 @@ layout: page
 title: Explainable AI Decision-Making in Human-AI Groups
 description: A closed-loop machine teaching framework using particle filter-based belief models and information-theoretic demonstration selection to adaptively explain robot decision-making to individuals and diverse groups.
 img: /assets/img/group_teaching_thumbnail.png
-importance: 6
+importance: 5
 category: work
 related_publications: true
 github: https://github.com/HARPLab/group_teaching

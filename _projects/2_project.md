@@ -3,7 +3,7 @@ layout: page
 title: Real-Time Detection of Unexpected AI Behavior from Human Emotional Cues
 description: A multimodal pipeline using OpenFace 2.0, OpenSMILE, and XGBoost (79.4% TPR, ~2.7s latency) to detect user emotional responses to unexpected in-vehicle system behaviors, with autonomous verbal mitigation.
 img: /assets/img/driver_cues_thumbnail.png
-importance: 5
+importance: 4
 category: work
 related_publications: true
 github: https://github.com/Augmented-Design-Capability-Studio/in-car-passenger-monitoring

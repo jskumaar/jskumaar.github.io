@@ -3,7 +3,7 @@ layout: page
 title: Pedestrian Behavior Modeling for Autonomous Vehicles
 description: Explainable hybrid automaton models that predict long-horizon pedestrian crossing behavior, feeding probabilistic forecasts into AV motion planners for safe urban navigation.
 img: /assets/img/ped_typical_behavior.png
-importance: 3
+importance: 7
 category: work
 related_publications: true
 github: https://github.com/jskumaar/pedestrianHybridModel

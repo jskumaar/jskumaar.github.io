@@ -3,7 +3,7 @@ layout: page
 title: Contact-Aware Teleoperation for Robotic Manipulation
 description: A teleoperation system using camera-based hand tracking and VR interfaces that retargets human hand motion to robot configurations via optimal control, enforcing physical grasp stability through a Grasp Wrench Space formulation within a TAMP framework.
 img: /assets/img/contact_aware_setup.png
-importance: 2
+importance: 1
 category: work
 related_publications: true
 github: https://github.com/Astronauty/hand-control

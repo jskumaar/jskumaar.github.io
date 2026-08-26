@@ -675,11 +675,38 @@ footer.sticky-bottom {
       margin: 0;
     }
 
+    .card-img-wrap {
+      position: relative;
+    }
+
     .card-img {
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 4 / 3;
       object-fit: cover;
       padding-top: 0;
       border-radius: 0.25rem;
+    }
+
+    .github-icon {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background-color: rgba(0, 0, 0, 0.55);
+      border-radius: 999px;
+      padding: 0.25rem 0.5rem;
+      line-height: 1;
+
+      a,
+      .gh-icon {
+        color: #fff;
+      }
+
+      .stars {
+        color: #fff;
+        font-size: 0.75rem;
+      }
     }
 
     .card-title {
@@ -690,7 +717,7 @@ footer.sticky-bottom {
     .card-body {
       display: flex;
       flex-direction: column;
-      height: 280px;
+      height: 260px;
       padding: 1rem;
       overflow: hidden;
     }
@@ -699,7 +726,7 @@ footer.sticky-bottom {
       font-size: 0.82rem;
       line-height: 1.35;
       display: -webkit-box;
-      -webkit-line-clamp: 9;
+      -webkit-line-clamp: 10;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }

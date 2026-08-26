@@ -3,7 +3,7 @@ layout: page
 title: Team cooperation dynamics in mixed-motive teams
 description: Studying factors that shape cooperation in mixed-motive human-AI teams through interactive online games.
 img: /assets/img/team_dynamics_game_screen.png
-importance: 10
+importance: 6
 category: work
 related_publications: true
 ---

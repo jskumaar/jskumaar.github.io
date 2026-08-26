@@ -3,7 +3,7 @@ layout: page
 title: Real-Time Trust Estimation and Calibration for Autonomous Vehicles
 description: A Kalman filter-based framework that continuously estimates driver trust from behavioral signals and actively manages trust through adaptive communication, reducing miscalibration by ~40%.
 img: /assets/img/driver_trust_thumbnail.png
-importance: 4
+importance: 8
 category: work
 related_publications: true
 ---

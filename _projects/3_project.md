@@ -3,7 +3,7 @@ layout: page
 title: Participation detection and Robot Mediation for Inclusive Child Group Interactions
 description: Real-time sensing and robot strategies to support equitable participation among mixed-ability children in group interactions (WIP).
 img: /assets/img/inclusive_robot_mediation.png
-importance: 9
+importance: 3
 category: work
 related_publications: true
 github: https://github.com/jskumaar/group_participation_detection
