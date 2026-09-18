@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: 'Postdoctoral Researcher &nbsp;·&nbsp; <a href="https://www.ri.cmu.edu/">Robotics Institute</a> &nbsp;·&nbsp; <a href="https://www.cmu.edu/">Carnegie Mellon University</a> &nbsp;·&nbsp; <a href="https://aipex-lab.github.io/">AiPEX Lab</a>'
+subtitle: 'Postdoctoral Researcher &nbsp;·&nbsp; <a href="https://www.cmu.edu/">Carnegie Mellon University</a> &nbsp;·&nbsp; <a href="https://aipex-lab.github.io/">AiPEX Lab</a>'
 
 profile:
   align: right
