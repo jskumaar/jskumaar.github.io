@@ -10,7 +10,6 @@ profile:
   image_circular: false
   more_info: >
     <p>sureshkj@andrew.cmu.edu</p>
-    <p><a href="/cv">Curriculum Vitae</a></p>
 
 news: true
 selected_papers: true
